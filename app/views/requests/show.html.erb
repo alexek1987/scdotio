@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Your chat with <%= @request.user.first_name %></h1>
+    <div class="entries-container container overflow-auto">
+        <% if @request.entries.empty? %>
+            <p>Start talking</p>
+        <% else %>
+            <% @request.entries.each do |entry| %>
+                <% if entry.sender == current_user %>
+                    <div class="entry sender-messages justify-self-right my-1" id="entry-<%= entry.id %>">
+                        <p><strong><%= entry.sender.first_name %></strong></p>
+                        <p><%= entry.body %></p>
+                    </div>
+                <% else %>
+                    <div class="entry recipient-messages" id="entry-<%= entry.id %>">
+                        <p><strong><%= entry.sender.first_name %></strong></p>
+                        <p><%= entry.body %></p>
+                    </div>
+                <% end %>
+            <% end %>
+        <% end %>
+    </div>
+    <div class="container mt-0">
+        <div class="entries-field">
+            <%= simple_form_for [@request, @new_entry], remote: true do |f| %>
+                <%= f.input :body, label: "Start Talking" %>
+                <%= f.submit "Send" %>
+            <% end %>
+        </div>
+    </div>
+
+</div>

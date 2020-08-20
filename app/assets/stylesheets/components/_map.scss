@@ -1,0 +1,32 @@
+#map {
+  height: calc(100vh - 100px);
+  position: sticky;
+  margin-top: 100px;
+  width: 60%;
+}
+
+.main-container {
+  display: flex;
+}
+
+.all-pups-h1 {
+  margin-top: 70px;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  background: rgb(245,245,245);
+  color: rgb(20, 20, 20);
+  font-family:  'Roboto', sans-serif;
+  padding: 4px;
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.highlight {
+  opacity: 0.8;
+}

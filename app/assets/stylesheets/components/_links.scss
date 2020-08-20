@@ -1,0 +1,9 @@
+.link {
+    color: black !important;
+    transition: 0.12s;
+    text-decoration: underline;
+    &:hover {
+        color: $medium-blue !important;
+        text-decoration: underline;
+    }
+}

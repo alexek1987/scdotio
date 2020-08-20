@@ -1,0 +1,9 @@
+<%= form_tag products_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+        params[:query],
+        class: "form-control nav-search-group",
+          id: "nav-search",
+        placeholder: "Search"
+    %>
+    <%= submit_tag "Search", class: "btn ml-2 nav-search-group" %>
+<% end %>

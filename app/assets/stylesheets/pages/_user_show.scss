@@ -1,0 +1,37 @@
+.container.show{
+  padding: 1%;
+  .img{
+    text-align: center;
+  }
+  .details{
+    border-left: 2px solid $darkest-green;
+  }
+  .details p{
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+}
+
+#pro-head {
+  display: block;
+    border-bottom: 2px solid #3DCCC7;
+    padding: 8px;
+    width: 30%;
+    position: relative;
+    bottom: -6px;
+    margin-bottom: 25px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+div.users-pups {
+  margin-top: 50px;
+}
+
+div.users-pups-grid {
+  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+}

@@ -1,0 +1,29 @@
+.btn {
+  background-color: $medium-blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.btn-sign-up {
+    background-color: $medium-blue;
+    color: white !important;
+}
+
+.btn-log-in {
+    background-color: $medium-blue;
+    color: white !important;
+}
+
+.show-button {
+  margin-left: 8px;
+}
+
+.heart {
+  font-size: 50px;
+}
+
+.heart-emoji :hover {
+  opacity: 0.5;
+}

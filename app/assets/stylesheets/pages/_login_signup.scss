@@ -1,0 +1,31 @@
+.background-container{
+    background-image: url('https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_1000/https://ecommerceiq.asia/wp-content/uploads/2018/12/influencer-marketing.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    display: flex;
+}
+
+
+.form-box {
+    display: flex;
+    margin-top: 150px;
+    background-color: rgba(255,255,255,0.84);
+    border-radius: 10px;
+    @media (max-width: 375px){
+        align-items: end;
+    }
+    margin-bottom: 10px;
+  h2 {
+    margin-top: 15px;
+  }
+}
+
+.form-item {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.sign-up-links {
+  text-align: center;
+}

@@ -1,0 +1,29 @@
+// Specific CSS for your home-page
+body {
+  background-color: #FFFFFF;
+}
+
+.card-trip-container {
+  margin: -30px 25px;
+}
+
+div.home-search-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#home-head-container {
+  margin-top: 15px;
+}
+
+#home-search-container {
+  margin-left: 27px;
+}
+
+.site-info {
+  border: 2px solid $medium-green;
+  border-radius: 10px;
+  padding: 16px 8px;
+  color: $darkest-green;
+}

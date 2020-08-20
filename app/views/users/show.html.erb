@@ -1,0 +1,70 @@
+<div class="container show">
+  <h2 id="pro-head">Profile</h2>
+  <div class="row">
+    <div class="col-md-4 img">
+      <% if @user.avatar.attached? %>
+      <%= cl_image_tag @user.avatar.key, width: 250, crop: :scale %>
+      <% else %>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQLOpe1MAvkqPwwTU0KLsa6FMh1rAZWg3OR_Q&usqp=CAU" alt="pic">
+      <% end %>
+    </div>
+    <div class="col-md-8 details">
+      <h4><%= @user.first_name %></h4>
+      <p> <%= @user.email %>
+        <br>
+        Joined: <%= @user.created_at.strftime('%B %Y') %>
+      </p>
+      <% if @user == current_user %>
+      <p><%= link_to "Edit Profile", edit_user_registration_path %></p>
+      <% end %>
+      <div id="user-reviews">
+        <h5><%= @user.first_name %>'s Reviews</h5>
+        <% if @user.reviews.empty? %>
+          <p><%= @user.first_name %> doesn't have any reviews yet. 😔</p>
+        <% else %>
+          <% @user.reviews.each do |review| %>
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title"><%= review.request.product.name %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><%= review.request.start_date.strftime("%B %e, %Y") %> - <%= review.request.end_date.strftime("%B %e, %Y") %></h6>
+                <p class="card-text"> <%= '⭐️' * review.rating %> <%= review.content %></p>
+            </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="users-pups">
+        <h4> <%= @user.first_name %>'s Products</h4>
+        <div class="row">
+        <% if @user.products.empty? %>
+          <p> <%= @user.first_name %> doesnt have any pups available to foster yet.</p>
+        <% else %>
+        <div class="users-pups-grid">
+          <% @user.products.each do |product| %>
+            <%= link_to product_path(product) do %>
+
+              <div class="card-trip">
+                <% if product.photos.first %>
+                  <%= cl_image_tag product.photos.first.key, width: 350, crop: :scale %>
+                <% else %>
+                  <img src="https://www.menupleaz.com/build/images/empty-product-large.png" />
+                <% end %>
+                <div class="card-trip-infos">
+                  <div>
+                    <h2><%= product.title %></h2>
+                    <p><%= product.brand  %></p>
+                  </div>
+                  <h2 class="card-trip-age">Payment: <%= product.age %> 🤑</h2>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

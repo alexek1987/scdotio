@@ -1,0 +1,97 @@
+<div class="container">
+  <h2 id="id-head">Your Dashboard</h2>
+  <ul class="nav nav-pills dashboard-nav mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link tabs-underlined active" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="true">Requests You've Made</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link tabs-underlined" id="pills-upcoming-tab" data-toggle="pill" href="#pills-upcoming" role="tab" aria-controls="pills-upcoming" aria-selected="false">Your Upcoming Campaigns</a>
+    </li>
+      <li class="nav-item" role="presentation">
+      <a class="nav-link tabs-underlined" id="pills-upcoming-tab" data-toggle="pill" href="#pills-current" role="tab" aria-controls="pills-upcoming" aria-selected="false">My Current Campaigns</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link tabs-underlined" id="pills-past-tab" data-toggle="pill" href="#pills-past" role="tab" aria-controls="pills-past" aria-selected="false">My Past Campaigns</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link tabs-underlined" id="pills-incoming-tab" data-toggle="pill" href="#pills-incoming" role="tab" aria-controls="pills-incoming" aria-selected="false">Your Campaigns' Requests</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-requests" role="tabpanel" aria-labelledby="pills-requests-tab">
+      <div class="row">
+        <% if @pending_requests.empty? %>
+        <p>You haven't requested any campaigns yet!<%= link_to "Find campaigns here!", products_path %></p>
+        <% else %>
+        <% @pending_requests.each do |request| %>
+        <%= link_to product_path(request.product) do %>
+          <div class="col-md-4">
+          <%= render "products/card", request: request, review: nil %>
+          <% end %>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="pills-upcoming" role="tabpanel" aria-labelledby="pills-upcoming-tab">
+      <div class="row">
+        <% if @upcoming_requests.empty? %>
+        <p>You don't have have any upcoming campaigns yet. <%= link_to "Find campaigns here!", products_path %></p>
+        <% else %>
+        <% @upcoming_requests.each do |request| %>
+          <%= link_to product_path(request.product) do %>
+        <div class="col-md-4">
+          <%= render "products/card", request: request, review: nil %>
+          <% end %>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+     <div class="tab-pane fade" id="pills-current" role="tabpanel" aria-labelledby="pills-current-tab">
+      <div class="row">
+        <% if @current_fosters.empty? %>
+        <p>You have no active campagins! <%= link_to "Find campaigns here!", products_path %></p>
+        <% else %>
+        <% @current_fosters.each do |request| %>
+          <%= link_to product_path(request.product) do %>
+        <div class="col-md-4">
+          <%= render "products/card", request: request, review: nil %>
+          <% end %>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="pills-past" role="tabpanel" aria-labelledby="pills-past-tab">
+      <div class="row">
+        <% if @past_requests.empty? %>
+        <p>You haven't completed any campaigns yet. <%= link_to "Find campaigns here!", products_path %></p>
+        <% else %>
+          <% @past_requests.each do |request| %>
+            <%= link_to product_path(request.product) do %>
+          <div class="col-md-4">
+          <%= render "products/card", request: request, review: nil %>
+          <% end %>
+          </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="pills-incoming" role="tabpanel" aria-labelledby="pills-incoming-tab">
+      <div class="row">
+        <% if @incoming_requests.empty? %>
+        <p>You don't have any requests yet. </p>
+        <% else %>
+        <% @incoming_requests.each do |request| %>
+          <%= link_to product_path(request.product) do %>
+        <div class="col-md-4">
+          <%= render "products/card", request: request, review: Review.new(request: request) %>
+          <% end %>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

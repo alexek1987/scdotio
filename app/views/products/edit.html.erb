@@ -1,0 +1,14 @@
+<div class="container new-form">
+  <h1 class="new-product">Edit <%= @product.title %></h1>
+  <div class="add_form">
+  <%= simple_form_for(@product) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :brand %>
+  <%= f.input :age %>
+  <%= f.input :description %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.submit "Finish! 👌🏽", class: "btn btn-outline-dark" %>
+  <% end %>
+  </div>
+</div>
+

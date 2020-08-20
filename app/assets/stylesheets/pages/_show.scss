@@ -1,0 +1,46 @@
+.container-top {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+
+    a {
+      height: 40px;
+    }
+}
+
+img.rounded {
+  width: 350px;
+  height: 350px;
+}
+
+div.photo {
+  text-align: center;
+}
+
+div.bottom-container {
+  margin: 50px;
+}
+
+.default {
+  width: 350px;
+  height: 350px;
+}
+
+h3::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #3DCCC7;
+  width: 25%;
+  position: relative;
+  bottom: -6px; /* your padding + border-width */
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+#edit {
+  margin-left: 10px;
+}
+
+div#user-reviews {
+  margin-top: 40px;
+}

@@ -1,0 +1,58 @@
+.container {
+  margin-top: 80px;
+}
+
+.card-header {
+  h4 {
+    text-align: center;
+  }
+}
+.dashboard-nav {
+
+  .tabs-underlined {
+    display: flex;
+    align-items: center;
+  }
+
+  .tabs-underlined {
+    color: black !important;
+    padding: 8px;
+    margin: 8px 16px;
+    opacity: .4 !important;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 4px solid transparent !important;
+    background-color: white !important;
+  }
+
+  .tabs-underlined.active {
+    opacity: 1 !important;
+    border-bottom: 3px solid #3DCCC7 !important;
+  }
+}
+
+
+.dash-content {
+  margin-bottom: 80px;
+}
+
+.request-card {
+  margin-bottom: 20px;
+}
+
+.card-dash {
+  margin: 12px;
+}
+
+#id-head {
+  display: block;
+    border-bottom: 1px solid #3DCCC7;
+    padding: 8px;
+    width: 30%;
+    position: relative;
+    bottom: -6px;
+    margin-bottom: 25px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 16px;
+}

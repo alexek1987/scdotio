@@ -1,0 +1,17 @@
+
+<div class="bg-img">
+  <div class="form-container new-form">
+    <h1 class="new-product">Add offer</h1>
+    <div class="add_form">
+      <%= simple_form_for(@product) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :brand %>
+          <%= f.input :age %>
+          <%= f.input :description, label: "Here you put your offer, freebis" %>
+          <%= f.input :address %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <%= f.submit "Start Campagin!", class: "btn" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
