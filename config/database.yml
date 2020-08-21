@@ -82,4 +82,4 @@ production:
   <<: *default
   database: _super_clout_production
   username: _super_clout
-  password: <%= ENV['_SUPER_CLOUT__DATABASE_PASSWORD'] %>
+  password: <%= ENV['_SUPER_CLOUT_DATABASE_PASSWORD'] %>
