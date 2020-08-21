@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: _foster_pup_project_production
-  username: _foster_pup_project
-  password: <%= ENV['_FOSTER_PUP_PROJECT_DATABASE_PASSWORD'] %>
+  database: _super_clout_production
+  username: _super_clout
+  password: <%= ENV['_SUPER_CLOUT__DATABASE_PASSWORD'] %>

@@ -1,0 +1,40 @@
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - 2020-08-21 16:29:26.551461000 Z
+    - 2020-08-21 16:29:26.551461000 Z
+  - - schema_sha1
+    - 99b95ef457d955f7f0824dac8a8fd3230c3509bc
+    - 2020-08-21 16:29:26.560805000 Z
+    - 2020-08-21 16:29:26.560805000 Z
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - created_at
+  - updated_at
+  - first_name
+  records: 
+  - - 1
+    - alexek1987@icloud.com
+    - "$2a$12$8PnOCwq5IoYhQW00x4951uTnn/nGzvAiuCVFiQQKPn5w6Ks2eNkJq"
+    - 
+    - 
+    - 
+    - 2020-08-21 16:31:03.448353000 Z
+    - 2020-08-21 16:31:03.448353000 Z
+    - Alex
