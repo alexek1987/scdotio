@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :requests, only: [:new, :create]
   end
 
-  resources :requests, only: [:show, :edit, :update] do
+  resources :requests, only: [:show, :edit, :update, :accept] do
     resources :entries, except: [:show, :destroy]
     resources :reviews, only: [:new, :create]
   end

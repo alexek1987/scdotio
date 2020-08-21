@@ -41,13 +41,19 @@
 
       <div class="bottom-container">
         <div class="pup-info">
-          <h3>Offer <i class="fas fa-money-check"></i></h3>
-          <p>Product: <%= @product.title %></p>
-          <p>Brand: <%= @product.brand %></p>
-          <p>Compensation <small>(In USD)</small> <%= @product.age %> $</p>
-          <p>Freebees: <%= @product.description%></p>
+          <h3>Offer</h3>
+          <small><h5>Product</h5></small>
+          <p><%= @product.title %></p>
+          <small><h5>Brand</h5></small>
+          <p><%= @product.brand %></p>
+          <small><h5>Compensation</h5></small><small>(In USD)</small>
 
-          <small><p>Terms</p></small>
+          <p>$<%= @product.compensation %></p>
+            <small><h5>Freebie</h5></small>
+            <p><%= @product.freebie%></p>
+            <small><h5>Termsheet</h5></small>
+            <p><%= @product.description%></p>
+          <small><p>eque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p></small>
         </div>
         <div class="links">
           <div class="make-request">

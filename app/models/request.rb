@@ -12,7 +12,7 @@ class Request < ApplicationRecord
   def request_icon
     case self.status
     when "accepted"
-      return "fas fa-paw text-primary"
+      return "text-primary"
     when "rejected"
       return "fa fa-times-circle text-danger"
     when "pending"

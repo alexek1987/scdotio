@@ -1,47 +1,46 @@
  <div class="card-dash">
   <div class="card-header ">
     <h4><%= request.product.title %></h4>
-    <% if request.product.photos.any? %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path request.product.photos.first.key %>')">
-    </div>
-    <% else %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.menupleaz.com/build/images/empty-product-large.png')">
-    </div>
+      <% if request.product.photos.any? %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path request.product.photos.first.key %>')">
+        </div>
+      <% else %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.menupleaz.com/build/images/empty-product-large.png')">
+          </div>
+      <% end %>
+      <div class="card-body">
+        <div class="card-info">
+          <i class="<%= request.request_icon %>">
+          </i> <%= request.status.capitalize %>
+          </br>
+           <% if request.status == "accepted" %>
+            <%= link_to "Chat", request_path(request) %>
+            <br>
+            <% end %>
+            <% if request.product.user != current_user %>
+            <%= link_to "Brand", user_path(request.product.user) %>
+            <% end %>
+            </br>
+            <% if request.user != current_user %>
+              Requested by: <%= link_to request.user.first_name, user_path(request.user) %>
+            <% end %>
+         </div>
+        <% if policy(request).accept? %>
+      <%= link_to 'Accept', accept_request_path(request), method: :patch, class: "request-options", id: "sweet-alert-accepted" %>
+      <%= link_to 'Reject', reject_request_path(request), method: :patch, class: "request-options", id: "sweet-alert-rejected" %>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-<%= request.id %>">
+        View Request
+      </button>
     <% end %>
-
-    <div class="card-body">
-      <div class="card-info">
-        <i class="<%= request.request_icon %>"></i> Status: <%= request.status.capitalize %>
-      </br>
-      <% if request.status == "accepted" %>
-        <%= link_to "View Entry Log", request_path(request) %>
-      <% end %>
-
-      <% if request.product.user != current_user %>
-
-      <%= link_to "View Brands's Profile", user_path(request.product.user) %>
-      <% end %>
-    </br>
-    <% if request.user != current_user %>
-      Requested by: <%= link_to request.user.first_name, user_path(request.user) %>
-      <% end %>
+    <% if review && policy(review).create? %>
+      <%= link_to 'Write Review', new_request_review_path(request), class: "btn" %>
+     <% end %>
+      <hr>
+      <div class="status">
+       <i class=""></i> Sent: <%= request.created_at.strftime("%A, %b %d, %y") %>
+      </div>
+    </div>
   </div>
-  <% if policy(request).accept? %>
-  <%= link_to 'Accept', accept_request_path(request), method: :patch, class: "request-options", id: "sweet-alert-accepted" %>
-  <%= link_to 'Reject', reject_request_path(request), method: :patch, class: "request-options", id: "sweet-alert-rejected" %>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-<%= request.id %>">
-    View Request
-  </button>
-  <% end %>
-  <% if review && policy(review).create? %>
-  <%= link_to 'Write Review', new_request_review_path(request), class: "btn" %>
-  <% end %>
-  <hr>
-  <div class="status">
-    <i class=""></i> Sent: <%= request.created_at.strftime("%A, %b %d, %y") %>
-  </div>
-</div>
-</div>
 </div>
 
 <!-- Modal -->
@@ -56,9 +55,7 @@
       </div>
       <div class="modal-body">
         <p>Name: <%= request.user.first_name %></p>
-
         <p>Message: <%= request.content %></p>
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

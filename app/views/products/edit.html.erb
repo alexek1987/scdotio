@@ -4,7 +4,8 @@
   <%= simple_form_for(@product) do |f| %>
   <%= f.input :title %>
   <%= f.input :brand %>
-  <%= f.input :age %>
+  <%= f.input :compensation %>
+  <%= f.input :freebie %>
   <%= f.input :description %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Finish! 👌🏽", class: "btn btn-outline-dark" %>

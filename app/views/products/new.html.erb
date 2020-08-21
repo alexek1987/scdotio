@@ -6,8 +6,9 @@
       <%= simple_form_for(@product) do |f| %>
       <%= f.input :title %>
       <%= f.input :brand %>
-          <%= f.input :age %>
-          <%= f.input :description, label: "Here you put your offer, freebis" %>
+          <%= f.input :freebie, label: "What freebies are you offering our SuperClouts?" %>
+           <%= f.input :compensation, label: "How much $ is the offer?" %>
+          <%= f.input :description, label: "Descibe the terms of this campaign" %>
           <%= f.input :address %>
           <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <%= f.submit "Start Campagin!", class: "btn" %>

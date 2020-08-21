@@ -4,8 +4,8 @@
         <h1>Welcome back <strong><%= @user.first_name %>!</strong></h1>
         <%= link_to "Go to Dashboard", dashboard_path, class: "btn my-3"%>
     <% else %>
-        <h1>Welcome<strong>SuperClouts & Brands</strong></h1>
-        <p>It's what we do</p>
+        <h1>Welcome to SuperClout</h1>
+        <p>Influencers and brands join now!</p>
         <a class="btn" href="<%= new_user_registration_path %>">Join now</a>
     <% end %>
   </div>
@@ -39,7 +39,7 @@
             <h2><%= product.title %></h2>
             <p><%= product.brand %></p>
           </div>
-          <h2 class="card-trip-age">Payment: <%= pluralize product.age.size, "dollar" %></h2>
+          <h2 class="card-trip-age">Payment: <%= pluralize product.compensation.size, "dollar" %></h2>
 
         </div>
       </div>

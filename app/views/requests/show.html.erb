@@ -2,7 +2,7 @@
     <h1>Your chat with <%= @request.user.first_name %></h1>
     <div class="entries-container container overflow-auto">
         <% if @request.entries.empty? %>
-            <p>Start talking</p>
+            <p>Crickets....</p>
         <% else %>
             <% @request.entries.each do |entry| %>
                 <% if entry.sender == current_user %>
@@ -22,7 +22,7 @@
     <div class="container mt-0">
         <div class="entries-field">
             <%= simple_form_for [@request, @new_entry], remote: true do |f| %>
-                <%= f.input :body, label: "Start Talking" %>
+                <%= f.input :body, label: "Write a message" %>
                 <%= f.submit "Send" %>
             <% end %>
         </div>

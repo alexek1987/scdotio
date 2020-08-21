@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :skip_all_authorization
+
   before_action :set_request, only: [:edit, :update, :show, :accept, :reject]
 
   def new
@@ -60,10 +60,6 @@ class RequestsController < ApplicationController
   end
 
   private
-
-  def skip_all_authorization
-   skip_authorization
- end
 
   def request_params
     params.require(:request).permit(:content, :start_date, :end_date)
