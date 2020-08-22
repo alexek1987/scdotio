@@ -29,7 +29,7 @@ import{initAutocomplete} from '../plugins/init_autocomplete'
 import { initUpdateNavbarOnScroll } from "../dom/dynamicNavbar"
 import { initStarRating } from '../plugins/init_star_rating';
 import { initSweetalert } from '../plugins/init_sweetalert';
-
+import { initPopover } from '../plugins/popover_activation'
 
 
 
