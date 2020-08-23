@@ -134,8 +134,7 @@ Browse our listings, see anything you like? Just click it and check out the offe
     </div>
 </div>
 
-<div class="container">
-<div class="py-6 card-trip-container">
+<div class="py-5 card-trip-container">
   <% @products.each do |product| %>
     <%= link_to product_path(product) do %>
       <div class="card-trip">
@@ -156,4 +155,4 @@ Browse our listings, see anything you like? Just click it and check out the offe
     <% end %>
   <% end %>
 </div>
-</div>
+

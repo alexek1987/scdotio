@@ -11,6 +11,7 @@ div.home-search-form {
   width: 100%;
   display: flex;
   justify-content: space-between;
+
 }
 
 #home-head-container {
@@ -18,12 +19,16 @@ div.home-search-form {
 }
 
 #home-search-container {
-  margin-left: 27px;
+  margin-left: 20px;
 }
 
 .site-info {
-  border: 2px solid $medium-green;
+  border: 1px solid $medium-green;
   border-radius: 10px;
   padding: 16px 8px;
   color: $darkest-green;
+  margin-left: 10px;
+  width: 100%;
+
 }
+
