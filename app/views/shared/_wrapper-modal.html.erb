@@ -1,7 +1,7 @@
 <script>
   $('#myModalWrapper').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
-    $('#myModal').modal('toggle')
+    $('#myModalWrapper').modal('toggle')
   })
 </script>
 
@@ -24,8 +24,10 @@
       </div>
 
       <div class="modal-body">
-        <%= render "shared/brands_modal" %>
-        <%= render "shared/superclout_modal" %>
+        <div> <%= render "shared/brands_modal" %></div>
+
+        <div><%= render "shared/superclout_modal" %></div>
+
 
 
 
@@ -35,12 +37,6 @@
     </div>
   </div>
 </div>
-        <!-- <script>
-          function superCloutPopUp() {
-            let popup = document.getElementById("PopupSuperclout");
-            popup.classList.toggle("show");
-          }
-        </script>
-      -->
+
     </div>
   </div>
