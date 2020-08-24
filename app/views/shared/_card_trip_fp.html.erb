@@ -1,0 +1,20 @@
+<div class="py-5 card-trip-container">
+  <% @products.each do |product| %>
+    <%= link_to product_path(product) do %>
+    <div class="card-trip">
+      <% if product.photos.first %>
+        <%= cl_image_tag product.photos.first.key, width: 350, crop: :scale %>
+       <% else %>
+        <img src="https://www.menupleaz.com/build/images/empty-product-large.png" />
+      <% end %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= product.title %></h2>
+          <p><%= product.brand %></p>
+        </div>
+         <h2 class="card-trip-age">Payment: $<%= product.compensation %></h2>
+      </div>
+    </div>
+  <% end %>
+ <% end %>
+</div>
