@@ -34,47 +34,7 @@
           </p>
         </div>
 
-        <script>
-          $('#myModalHome').on('shown.bs.modal', function () {
-            $('#myInput').trigger('focus')
-            $('#myModalHome').modal('toggle')
-          })
-        </script>
-
-
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn btn-lg" data-toggle="modal" data-target="#myModalHome">
-          Click here to find out more!
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="myModalHome" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-
-
-                <h4 class="modal-title" id="myModalLabel">Who are you traveller?</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-              </div>
-              <div class="modal-body">
-
-
-                <%= render "shared/brands_modal" %>
-
-                <hr />
-
-                <%= render "shared/superclout_modal" %>
-
-              </div>
-              <div class="modal-footer">
-                <p>Already have an account?</p>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Login</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <%= render "shared/wrapper_modal" %>
       <div id="home-search-container">
         <%= render "shared/search_form" %>
       </div>
