@@ -3,8 +3,7 @@
   <div class="request-form">
   <%= simple_form_for [@product, @request] do |f|%>
       <%= f.input :content, label: "Tell the brand why you should be their SuperClout for this product!" %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
+
       <%= f.submit "Submit", class: "btn btn-outline-dark love-btn", id: "sweet-alert" %>
   <% end %>
 </div>

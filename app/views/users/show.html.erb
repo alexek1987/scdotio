@@ -35,13 +35,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="users-pups">
+      <div class="users-products">
         <h4> <%= @user.first_name %>'s Products</h4>
         <div class="row">
         <% if @user.products.empty? %>
           <p> <%= @user.first_name %> doesnt have any pups available to foster yet.</p>
         <% else %>
-        <div class="users-pups-grid">
+        <div class="users-products-grid">
           <% @user.products.each do |product| %>
             <%= link_to product_path(product) do %>
 
